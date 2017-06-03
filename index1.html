@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index1</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-6 col-md-offset-3">
+			<h1>vue demo1</h1>
+			<div id="app1">
+				<div>{{message}}</div>
+			</div>
+			<h1>vue demo2</h1>
+			<div id="app2">
+				<div>{{message}}</div>
+				<input v-model="message">
+			</div>
+			<h1>vue demo3</h1>
+			<div id="app3">
+				<p v-if="seen">see</p>
+			</div>
+			<h1>vue demo4</h1>
+			<div id="app4">
+				<ol>
+					<li v-for="todo in todos">
+						{{ todo.text }}
+					</li>
+				</ol>
+			</div>
+			<h1>vue demo5</h1>
+			<div id="app5">
+				<div v-bind:style="styles">style</div>
+			</div>
+			<h1>vue demo6</h1>
+			<div id="app6">
+				<button v-on:click="oclick()">click</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		new Vue({
+			el:"#app1",
+			data:{
+				message:'aaa'
+			}
+		});
+		new Vue({
+			el:"#app2",
+			data:{
+				message:'aaa'
+			}
+		});
+		new Vue({
+			el:"#app3",
+			data:{
+				seen: true
+			}
+		});
+		new Vue({
+			el:"#app4",
+			data:{
+				todos: [
+					{text:'aaa'},
+					{text:'bbb'},
+					{text:'ccc'}
+				]
+			}
+		});
+		new Vue({
+			el:"#app5",
+			data:{
+				styles:{color:"red"}
+			}
+		});
+		new Vue({
+			el:"#app6",
+			methods:{
+				oclick:function() {
+					alert(0);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
